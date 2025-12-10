@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { ResearchSection } from "@/components/research-section";
+import { StackSection } from "@/components/stack-section";
 
 export default function Home() {
   return (
@@ -88,6 +89,7 @@ export default function Home() {
       </main>
       
       <ResearchSection />
+      <StackSection />
       
     </div>
   );
