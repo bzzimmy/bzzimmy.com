@@ -83,7 +83,7 @@ const additionalDisclosures = [
     description:
       "Featured on NPR at age 9 for discovering a Google Family Link security bypass, marking the beginning of security research journey.",
     icon: FileCode,
-    date: "2018",
+    date: "Apr 2018",
     link: "#",
   },
 ];
@@ -141,51 +141,62 @@ export function ResearchSection() {
             </div>
           </a>
         ))}
-
-        <AnimatePresence>
-          {showMore && additionalDisclosures.map((item, index) => (
-            <motion.a
-              key={`additional-${index}`}
-              href={item.link}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="group relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8 transition-opacity hover:opacity-100"
-            >
-              {/* Date Column */}
-              <div className="shrink-0 w-24 pt-1">
-                <span className="font-mono text-sm text-zinc-500 group-hover:text-purple-400 transition-colors">
-                  {item.date}
-                </span>
-              </div>
-
-              {/* Content Column */}
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-purple-100 transition-colors flex items-center gap-2">
-                    {item.company}
-                    <span className="text-muted-foreground font-normal">
-                       — {item.title}
-                    </span>
-                  </h3>
-
-                  <div className="shrink-0 flex items-center gap-3">
-                    <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
-                      {item.bounty}
-                    </span>
-                    <ArrowUpRight className="h-4 w-4 text-zinc-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-purple-400 opacity-0 sm:opacity-100" />
-                  </div>
-                </div>
-
-                <p className="text-base leading-relaxed text-muted-foreground/80 group-hover:text-muted-foreground transition-colors">
-                  {item.description}
-                </p>
-              </div>
-            </motion.a>
-          ))}
-        </AnimatePresence>
       </div>
+
+      <AnimatePresence>
+        {showMore && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="flex flex-col gap-12 pt-12">
+              {additionalDisclosures.map((item, index) => (
+                <motion.a
+                  key={`additional-${index}`}
+                  href={item.link}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="group relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8 transition-opacity hover:opacity-100"
+                >
+                  {/* Date Column */}
+                  <div className="shrink-0 w-24 pt-1">
+                    <span className="font-mono text-sm text-zinc-500 group-hover:text-purple-400 transition-colors">
+                      {item.date}
+                    </span>
+                  </div>
+
+                  {/* Content Column */}
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center justify-between gap-4">
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-purple-100 transition-colors flex items-center gap-2">
+                        {item.company}
+                        <span className="text-muted-foreground font-normal">
+                           — {item.title}
+                        </span>
+                      </h3>
+
+                      <div className="shrink-0 flex items-center gap-3">
+                        <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
+                          {item.bounty}
+                        </span>
+                        <ArrowUpRight className="h-4 w-4 text-zinc-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-purple-400 opacity-0 sm:opacity-100" />
+                      </div>
+                    </div>
+
+                    <p className="text-base leading-relaxed text-muted-foreground/80 group-hover:text-muted-foreground transition-colors">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="mt-12 flex justify-start">
         <button
