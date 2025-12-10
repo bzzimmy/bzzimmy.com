@@ -1,9 +1,10 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { AuroraText } from "@/components/ui/aurora-text";
+import { ResearchSection } from "@/components/research-section";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-start justify-center font-sans pt-32 sm:pt-40">
+    <div className="flex min-h-screen flex-col items-center font-sans pt-32 sm:pt-40">
       <main className="flex w-full max-w-2xl flex-col items-center justify-center gap-8 px-6 text-center sm:text-left">
         
         {/* Hero Section */}
@@ -24,7 +25,7 @@ export default function Home() {
             I've been awarded over <span className="text-foreground font-medium">$20,000 in bug bounties</span> for securing critical infrastructure and the open web.
           </p>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 pt-2">
             <a
               href="https://github.com/bzzimmy"
               target="_blank"
@@ -58,7 +59,7 @@ export default function Home() {
               href="#research" 
               className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              <span className="h-2 w-2 rounded-full bg-purple-500/50 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
               Research
             </a>
 
@@ -85,6 +86,9 @@ export default function Home() {
         </div>
 
       </main>
+      
+      <ResearchSection />
+      
     </div>
   );
 }
