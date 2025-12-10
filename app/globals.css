@@ -162,4 +162,7 @@
   body {
     @apply text-foreground min-h-screen bg-transparent;
   }
+  [id] {
+    scroll-margin-top: -4rem;
+  }
 }
