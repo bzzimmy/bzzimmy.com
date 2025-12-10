@@ -63,8 +63,7 @@ export function StackSection() {
               {group.tools.map((tool, tIndex) => (
                 <div 
                   key={tIndex} 
-                  className="relative h-10 w-10 flex items-center justify-center"
-                  title={tool.name}
+                  className="group/tool relative h-10 w-10 flex items-center justify-center"
                 >
                   <div className={`relative h-full w-full ${tool.className || ""}`}>
                     <Image
@@ -74,6 +73,11 @@ export function StackSection() {
                       className="object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                     />
                   </div>
+                  
+                  {/* Custom Tooltip */}
+                  <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-zinc-900 px-2 py-1 text-xs font-medium text-zinc-200 opacity-0 shadow-lg ring-1 ring-zinc-800 transition-all duration-200 delay-500 group-hover/tool:-top-8 group-hover/tool:opacity-100">
+                    {tool.name}
+                  </span>
                 </div>
               ))}
             </div>
