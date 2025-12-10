@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { Badge } from "@/components/ui/badge";
-import { Github, Plane, FileCode, Puzzle, ArrowUpRight } from "lucide-react";
+import { Github, Plane, FileCode, Puzzle, ArrowUpRight, ChevronDown } from "lucide-react";
 
-const disclosures = [
+const mainDisclosures = [
   {
     company: "GitHub",
     title: "Critical Infrastructure Access",
@@ -50,7 +52,45 @@ const disclosures = [
   },
 ];
 
+const additionalDisclosures = [
+  {
+    company: "Margelo",
+    title: "Exposed Credentials",
+    bounty: "Resolved",
+    severity: "Medium",
+    description:
+      "Discovered publicly exposed credentials that could compromise development infrastructure and internal systems.",
+    icon: FileCode,
+    date: "Aug 2025",
+    link: "#",
+  },
+  {
+    company: "Popsa",
+    title: "Security Misconfiguration",
+    bounty: "Resolved",
+    severity: "Medium",
+    description:
+      "Identified security misconfigurations that could lead to unauthorized access to user data and internal resources.",
+    icon: FileCode,
+    date: "Jul 2025",
+    link: "#",
+  },
+  {
+    company: "NPR",
+    title: "Early Security Research",
+    bounty: "Recognition",
+    severity: "Low",
+    description:
+      "Featured on NPR at age 9 for discovering a Google Family Link security bypass, marking the beginning of security research journey.",
+    icon: FileCode,
+    date: "2018",
+    link: "#",
+  },
+];
+
 export function ResearchSection() {
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <section id="research" className="w-full max-w-2xl px-6 py-24 sm:py-32">
       <div className="mb-12 flex flex-col items-center text-center sm:items-start sm:text-left">
@@ -58,20 +98,20 @@ export function ResearchSection() {
           Security Research
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          I specialize in identifying critical failures in large-scale systems. 
+          I specialize in identifying critical failures in large-scale systems.
           Here are some of my most significant disclosures.
         </p>
       </div>
 
       <div className="flex flex-col gap-12">
-        {disclosures.map((item, index) => (
+        {mainDisclosures.map((item, index) => (
           <a
             key={index}
             href={item.link}
             className="group relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8 transition-opacity hover:opacity-100"
           >
             {/* Date Column */}
-            <div className="shrink-0 pt-1">
+            <div className="shrink-0 w-24 pt-1">
               <span className="font-mono text-sm text-zinc-500 group-hover:text-purple-400 transition-colors">
                 {item.date}
               </span>
@@ -86,7 +126,7 @@ export function ResearchSection() {
                      — {item.title}
                   </span>
                 </h3>
-                
+
                 <div className="shrink-0 flex items-center gap-3">
                   <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
                     {item.bounty}
@@ -94,13 +134,67 @@ export function ResearchSection() {
                   <ArrowUpRight className="h-4 w-4 text-zinc-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-purple-400 opacity-0 sm:opacity-100" />
                 </div>
               </div>
-              
+
               <p className="text-base leading-relaxed text-muted-foreground/80 group-hover:text-muted-foreground transition-colors">
                 {item.description}
               </p>
             </div>
           </a>
         ))}
+
+        <AnimatePresence>
+          {showMore && additionalDisclosures.map((item, index) => (
+            <motion.a
+              key={`additional-${index}`}
+              href={item.link}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              className="group relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8 transition-opacity hover:opacity-100"
+            >
+              {/* Date Column */}
+              <div className="shrink-0 w-24 pt-1">
+                <span className="font-mono text-sm text-zinc-500 group-hover:text-purple-400 transition-colors">
+                  {item.date}
+                </span>
+              </div>
+
+              {/* Content Column */}
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-lg font-semibold text-foreground group-hover:text-purple-100 transition-colors flex items-center gap-2">
+                    {item.company}
+                    <span className="text-muted-foreground font-normal">
+                       — {item.title}
+                    </span>
+                  </h3>
+
+                  <div className="shrink-0 flex items-center gap-3">
+                    <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
+                      {item.bounty}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-zinc-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-purple-400 opacity-0 sm:opacity-100" />
+                  </div>
+                </div>
+
+                <p className="text-base leading-relaxed text-muted-foreground/80 group-hover:text-muted-foreground transition-colors">
+                  {item.description}
+                </p>
+              </div>
+            </motion.a>
+          ))}
+        </AnimatePresence>
+      </div>
+
+      <div className="mt-12 flex justify-start">
+        <button
+          onClick={() => setShowMore(!showMore)}
+          className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-purple-400"
+        >
+          <span>{showMore ? "Show less" : "Show more"}</span>
+          <ChevronDown className={`h-4 w-4 transition-transform ${showMore ? "rotate-180" : ""}`} />
+        </button>
       </div>
     </section>
   );
