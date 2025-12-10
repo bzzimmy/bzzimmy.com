@@ -2,7 +2,17 @@
 
 import Image from "next/image";
 
-const stack = [
+type Tool = {
+  name: string;
+  icon: string;
+  className?: string;
+};
+
+const stack: Array<{
+  category: string;
+  description: string;
+  tools: Tool[];
+}> = [
   {
     category: "Automation & Scripting",
     description: "Building custom scanners and automation tooling",
