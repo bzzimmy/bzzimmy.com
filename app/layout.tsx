@@ -18,6 +18,30 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Ben Zimmermann - Security Researcher",
   description: "16-year-old security researcher specializing in bug bounty hunting and vulnerability disclosure. $20K GitHub bounty recipient.",
+  openGraph: {
+    title: "Ben Zimmermann - Security Researcher",
+    description: "16-year-old security researcher specializing in bug bounty hunting and vulnerability disclosure. $20K GitHub bounty recipient.",
+    url: "https://bzzimmy.vercel.app",
+    siteName: "Ben Zimmermann",
+    images: [
+      {
+        url: "/images/seo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ben Zimmermann - Security Researcher",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ben Zimmermann - Security Researcher",
+    description: "16-year-old security researcher specializing in bug bounty hunting and vulnerability disclosure. $20K GitHub bounty recipient.",
+    images: ["/images/seo.jpg"],
+  },
+  other: {
+    "theme-color": "#a855f7",
+  },
 };
 
 export default function RootLayout({
