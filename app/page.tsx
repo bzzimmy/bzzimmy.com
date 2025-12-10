@@ -51,6 +51,37 @@ export default function Home() {
               <span>Email</span>
             </a>
           </div>
+
+          {/* In-Page Navigation */}
+          <nav className="mt-12 flex items-center gap-6 sm:gap-8">
+            <a 
+              href="#research" 
+              className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <span className="h-2 w-2 rounded-full bg-purple-500/50 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+              Research
+            </a>
+
+            <span className="text-zinc-700 select-none">/</span>
+
+            <a 
+              href="#projects" 
+              className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+              Projects
+            </a>
+
+            <span className="text-zinc-700 select-none">/</span>
+
+            <a 
+              href="#stack" 
+              className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+              Tech Stack
+            </a>
+          </nav>
         </div>
 
       </main>
