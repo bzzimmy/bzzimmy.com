@@ -46,7 +46,6 @@ export function BlurFadeText({
               exit="hidden"
               variants={combinedVariants}
               transition={{
-                yoyo: Infinity,
                 delay: delay + i * characterDelay,
                 ease: "easeOut",
               }}
@@ -70,7 +69,6 @@ export function BlurFadeText({
           exit="hidden"
           variants={combinedVariants}
           transition={{
-            yoyo: Infinity,
             delay,
             ease: "easeOut",
           }}
