@@ -11,7 +11,7 @@ export default function Home() {
       <main className="flex w-full max-w-2xl flex-col items-center justify-center gap-8 px-6 text-center sm:text-left">
         
         {/* Hero Section */}
-        <div className="flex flex-col items-center gap-4 sm:items-start">
+        <div className="flex w-full flex-col items-center gap-4 sm:items-start">
           <div className="space-y-2">
             <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl">
               <AuroraText colors={["#c084fc", "#a855f7", "#e879f9", "#ffffff"]} speed={0.5}>
