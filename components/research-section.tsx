@@ -48,7 +48,7 @@ const mainDisclosures = [
     bounty: "Resolved",
     severity: "High",
     description:
-      "Reverse-engineered popular AI extensions to bypass client-side authentication, allowing unlimited free access to premium LLM APIs (GPT-4, Claude 3) for 100k+ users.",
+      "Reverse-engineered popular AI extensions to bypass client-side authentication, allowing unlimited free access to premium LLM APIs (GPT-5, Claude 4.5) for 100k+ users.",
     icon: Puzzle,
     date: "Sep 2025",
     link: "#",
