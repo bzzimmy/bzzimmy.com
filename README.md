@@ -41,4 +41,4 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## Deployment
 
-Deployed on [Vercel](https://vercel.com) at [bzzimmy.vercel.app](https://bzzimmy.vercel.app)
+Deployed on [Vercel](https://vercel.com) at [benzimmermann.dev](https://benzimmermann.dev)
