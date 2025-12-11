@@ -47,7 +47,7 @@ export default function Home() {
                 <span>GitHub</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/bzzimmy"
+                href="https://www.linkedin.com/in/benzimm/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl rounded-tr-none rounded-bl-none border border-border bg-background/50 px-5 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-accent hover:text-accent-foreground hover:rounded-bl-xl hover:rounded-tr-xl hover:rounded-tl-none hover:rounded-br-none"
