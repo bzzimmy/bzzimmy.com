@@ -2,7 +2,7 @@
 
 A modern portfolio website showcasing security research achievements and bug bounty work. Built with Next.js, React, and Tailwind CSS with custom animated components.
 
-![Portfolio Preview](./public/preview.png)
+![Portfolio Preview](./public/images/preview.png)
 
 ## Features
 
