@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground mt-2">
-            Hey, I'm Ben. I'm a 16-year-old security researcher from California. 
+            Hey, I'm Ben. I'm a security researcher from California.
             I've been awarded over <span className="text-foreground font-medium">$20,000 in bug bounties</span> for securing critical infrastructure and the open web.
           </p>
 
