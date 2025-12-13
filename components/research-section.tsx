@@ -4,11 +4,22 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { Github, Plane, FileCode, Puzzle, ArrowUpRight, ChevronDown } from "lucide-react";
+import { Github, Plane, FileCode, Puzzle, ArrowUpRight, ChevronDown, Home } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
 const mainDisclosures = [
+  {
+    company: "TechCrunch",
+    title: "Home Depot Exposure",
+    bounty: "Featured",
+    severity: "Critical",
+    description:
+      "Featured in TechCrunch for discovering a year-long exposure at Home Depot. A leaked GitHub token granted access to hundreds of private repositories, cloud infrastructure, and order fulfillment systems.",
+    icon: Home,
+    date: "Dec 2025",
+    link: "https://techcrunch.com/2025/12/12/home-depot-exposed-access-to-internal-systems-for-a-year-says-researcher/",
+  },
   {
     company: "GitHub",
     title: "Critical Infrastructure Access",
@@ -42,6 +53,9 @@ const mainDisclosures = [
     date: "Oct 2025",
     link: "#",
   },
+];
+
+const additionalDisclosures = [
   {
     company: "Chrome Extensions",
     title: "AI Auth Bypass",
@@ -53,9 +67,6 @@ const mainDisclosures = [
     date: "Sep 2025",
     link: "#",
   },
-];
-
-const additionalDisclosures = [
   {
     company: "Margelo",
     title: "Exposed Credentials",
