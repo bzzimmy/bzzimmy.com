@@ -38,7 +38,7 @@ const stack: Array<{
     description: "Where I deploy code and engage with the community",
     tools: [
       { name: "Discord", icon: "/images/discord.png", className: "scale-[1.7]" }, 
-      { name: "GitHub", icon: "/images/github.png", className: "invert opacity-70 hover:opacity-100 scale-[1.7]" }, 
+      { name: "GitHub", icon: "/images/github.png", className: "invert scale-[1.7]" }, 
     ],
   },
 ];
@@ -85,7 +85,7 @@ export function StackSection() {
                         src={tool.icon}
                         alt={tool.name}
                         fill
-                        className="object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                        className="object-contain"
                       />
                     </div>
 

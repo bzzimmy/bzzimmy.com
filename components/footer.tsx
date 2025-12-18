@@ -15,7 +15,7 @@ export function Footer() {
               © 2025 Ben Zimmermann
             </span>
             <span className="text-xs text-muted-foreground font-mono">
-              Cogito, ergo sum
+              0day &gt; 1day
             </span>
           </div>
 
