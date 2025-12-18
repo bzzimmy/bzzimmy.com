@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Badge } from "@/components/ui/badge";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { Github, Plane, FileCode, Puzzle, ArrowUpRight, ChevronDown, Home } from "lucide-react";
+import { Github, Plane, FileCode, Puzzle, ChevronDown, Home } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -14,44 +13,40 @@ const mainDisclosures = [
     title: "Home Depot Exposure",
     bounty: "Featured",
     severity: "Critical",
-    description:
-      "Featured in TechCrunch for discovering a year-long exposure at Home Depot. A leaked GitHub token granted access to hundreds of private repositories, cloud infrastructure, and order fulfillment systems.",
+    description: "A leaked GitHub token granted access to hundreds of private repositories, cloud infrastructure, and order fulfillment systems.",
     icon: Home,
     date: "Dec 2025",
     link: "https://techcrunch.com/2025/12/12/home-depot-exposed-access-to-internal-systems-for-a-year-says-researcher/",
+    linkText: "Featured in TechCrunch",
   },
   {
     company: "GitHub",
     title: "Critical Infrastructure Access",
     bounty: "$20,000",
     severity: "Critical",
-    description:
-      "Discovered a leaked OAuth token granting write access to the 'github/github' repository and 74,000+ other private repositories. Provided administrative control over core production codebase.",
+    description: "Discovered a leaked OAuth token granting write access to 'github/github' and 74,000+ private repositories.",
     icon: Github,
     date: "Nov 2025",
-    link: "#",
   },
   {
     company: "TripAdvisor",
     title: "Sensitive Data Exposure",
     bounty: "$1,500",
     severity: "High",
-    description:
-      "Identified a publicly exposed employee token with 'repo' and 'workflow' scopes. Allowed unauthorized access to source code, internal build pipelines, and infrastructure.",
+    description: "Identified a publicly exposed employee token with 'repo' and 'workflow' scopes, allowing access to source code and build pipelines.",
     icon: Plane,
     date: "Nov 2025",
-    link: "#",
   },
   {
     company: "Vue.js",
     title: "Admin API Key Exposure",
     bounty: "Hall of Fame",
     severity: "Critical",
-    description:
-      "Found a leaked Algolia Admin API key with full write access to the official documentation search index. Acknowledged in the Vue.js Security Hall of Fame.",
+    description: "Found a leaked Algolia Admin API key with write access to the official documentation search index.",
     icon: FileCode,
     date: "Oct 2025",
-    link: "#",
+    link: "https://github.com/vuejs/core/blob/main/SECURITY.md",
+    linkText: "Acknowledged in the Vue.js Security Hall of Fame",
   },
 ];
 
@@ -61,44 +56,38 @@ const additionalDisclosures = [
     title: "AI Auth Bypass",
     bounty: "Resolved",
     severity: "High",
-    description:
-      "Reverse-engineered popular AI extensions to bypass client-side authentication, allowing unlimited free access to premium LLM APIs (GPT-5, Claude 4.5) for 100k+ users.",
+    description: "Reverse-engineered popular AI extensions to bypass client-side authentication, enabling free access to premium LLM APIs.",
     icon: Puzzle,
     date: "Sep 2025",
-    link: "#",
   },
   {
     company: "Margelo",
     title: "Exposed Credentials",
     bounty: "Resolved",
     severity: "Medium",
-    description:
-      "Discovered publicly exposed credentials that could compromise development infrastructure and internal systems.",
+    description: "Discovered publicly exposed credentials that could compromise development infrastructure.",
     icon: FileCode,
     date: "Aug 2025",
-    link: "#",
   },
   {
     company: "Popsa",
     title: "Security Misconfiguration",
     bounty: "Resolved",
     severity: "Medium",
-    description:
-      "Identified security misconfigurations that could lead to unauthorized access to user data and internal resources.",
+    description: "Identified misconfigurations that could lead to unauthorized access to user data.",
     icon: FileCode,
     date: "Jul 2025",
-    link: "#",
   },
   {
     company: "NPR",
     title: "Early Security Research",
     bounty: "Recognition",
     severity: "Low",
-    description:
-      "Featured on NPR at age 9 for discovering a Google Family Link security bypass, marking the beginning of security research journey.",
+    description: "Discovered a Google Family Link security bypass at age 9, marking the beginning of my security research journey.",
     icon: FileCode,
     date: "Apr 2018",
-    link: "#",
+    link: "https://www.npr.org/2018/06/18/620005246/a-guide-to-parental-controls-for-kids-tech-use",
+    linkText: "Featured on NPR",
   },
 ];
 
@@ -122,13 +111,10 @@ export function ResearchSection() {
       <div className="flex flex-col gap-12">
         {mainDisclosures.map((item, index) => (
           <BlurFade key={index} delay={BLUR_FADE_DELAY * 6 + index * 0.05}>
-            <a
-              href={item.link}
-              className="group relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8 transition-opacity hover:opacity-100"
-            >
+            <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
               {/* Date Column */}
               <div className="shrink-0 w-24 pt-1">
-                <span className="font-mono text-sm text-zinc-500 group-hover:text-purple-400 transition-colors">
+                <span className="font-mono text-sm text-zinc-500">
                   {item.date}
                 </span>
               </div>
@@ -136,26 +122,36 @@ export function ResearchSection() {
               {/* Content Column */}
               <div className="flex flex-col gap-2">
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-purple-100 transition-colors flex items-center gap-2">
+                  <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
                     {item.company}
                     <span className="text-muted-foreground font-normal">
                        — {item.title}
                     </span>
                   </h3>
 
-                  <div className="shrink-0 flex items-center gap-3">
+                  <div className="shrink-0">
                     <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
                       {item.bounty}
                     </span>
-                    <ArrowUpRight className="h-4 w-4 text-zinc-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-purple-400 opacity-0 sm:opacity-100" />
                   </div>
                 </div>
 
-                <p className="text-base leading-relaxed text-muted-foreground/80 group-hover:text-muted-foreground transition-colors">
+                <p className="text-base leading-relaxed text-muted-foreground/80">
+                  {item.link && item.linkText && (
+                    <>
+                      <a
+                        href={item.link}
+                        className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
+                      >
+                        {item.linkText}
+                      </a>
+                      {". "}
+                    </>
+                  )}
                   {item.description}
                 </p>
               </div>
-            </a>
+            </div>
           </BlurFade>
         ))}
       </div>
@@ -171,17 +167,16 @@ export function ResearchSection() {
           >
             <div className="flex flex-col gap-12 pt-12">
               {additionalDisclosures.map((item, index) => (
-                <motion.a
+                <motion.div
                   key={`additional-${index}`}
-                  href={item.link}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="group relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8 transition-opacity hover:opacity-100"
+                  className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8"
                 >
                   {/* Date Column */}
                   <div className="shrink-0 w-24 pt-1">
-                    <span className="font-mono text-sm text-zinc-500 group-hover:text-purple-400 transition-colors">
+                    <span className="font-mono text-sm text-zinc-500">
                       {item.date}
                     </span>
                   </div>
@@ -189,26 +184,36 @@ export function ResearchSection() {
                   {/* Content Column */}
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-between gap-4">
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-purple-100 transition-colors flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
                         {item.company}
                         <span className="text-muted-foreground font-normal">
                            — {item.title}
                         </span>
                       </h3>
 
-                      <div className="shrink-0 flex items-center gap-3">
+                      <div className="shrink-0">
                         <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
                           {item.bounty}
                         </span>
-                        <ArrowUpRight className="h-4 w-4 text-zinc-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-purple-400 opacity-0 sm:opacity-100" />
                       </div>
                     </div>
 
-                    <p className="text-base leading-relaxed text-muted-foreground/80 group-hover:text-muted-foreground transition-colors">
+                    <p className="text-base leading-relaxed text-muted-foreground/80">
+                      {item.link && item.linkText && (
+                        <>
+                          <a
+                            href={item.link}
+                            className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
+                          >
+                            {item.linkText}
+                          </a>
+                          {". "}
+                        </>
+                      )}
                       {item.description}
                     </p>
                   </div>
-                </motion.a>
+                </motion.div>
               ))}
             </div>
           </motion.div>
