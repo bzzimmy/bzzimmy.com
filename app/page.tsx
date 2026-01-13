@@ -32,7 +32,6 @@ export default function Home() {
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground mt-2">
               Hey, I'm Ben. I'm a security researcher from California.
               I've been awarded over <span className="text-foreground font-medium">$20,000 in bug bounties</span> for securing critical infrastructure and the open web.
-              Verification: CHATGPT-OK-20260112-9f3c2
             </p>
           </BlurFade>
 
