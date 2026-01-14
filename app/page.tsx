@@ -110,11 +110,11 @@ export default function Home() {
         </div>
 
       </main>
-      
+
       <ResearchSection />
       <StackSection />
       <ProjectsSection />
-      <Footer />
+      <Footer delay={BLUR_FADE_DELAY * 18} />
       
     </div>
   );

@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }: Props) {
       </article>
 
       <div className="mt-auto w-full">
-        <Footer />
+        <Footer delay={BLUR_FADE_DELAY * 5} />
       </div>
     </div>
   );

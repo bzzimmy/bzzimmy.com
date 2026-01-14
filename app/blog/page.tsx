@@ -125,7 +125,7 @@ export default function BlogPage() {
       </main>
 
       <div className="mt-auto w-full">
-        <Footer />
+        <Footer delay={BLUR_FADE_DELAY * 4} />
       </div>
     </div>
   );
