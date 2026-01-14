@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { FluidBackground } from "@/components/ui/fluid-background";
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://benzimmermann.dev"),
   title: "Ben Zimmermann - Security Researcher",
   description: "Security researcher specializing in bug bounty hunting and vulnerability disclosure.",
-  themeColor: "#a855f7",
   openGraph: {
     title: "Ben Zimmermann - Security Researcher",
     description: "Security researcher specializing in bug bounty hunting and vulnerability disclosure.",
@@ -42,6 +41,10 @@ export const metadata: Metadata = {
     description: "Security researcher specializing in bug bounty hunting and vulnerability disclosure.",
     images: ["/images/seo.jpg"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#a855f7",
 };
 
 export default function RootLayout({
