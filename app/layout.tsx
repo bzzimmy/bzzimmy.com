@@ -16,14 +16,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bzzimmy.vercel.app"),
+  metadataBase: new URL("https://benzimmermann.dev"),
   title: "Ben Zimmermann - Security Researcher",
-  description: "16-year-old security researcher specializing in bug bounty hunting and vulnerability disclosure. $20K GitHub bounty recipient.",
+  description: "Security researcher specializing in bug bounty hunting and vulnerability disclosure.",
   themeColor: "#a855f7",
   openGraph: {
     title: "Ben Zimmermann - Security Researcher",
-    description: "16-year-old security researcher specializing in bug bounty hunting and vulnerability disclosure. $20K GitHub bounty recipient.",
-    url: "https://bzzimmy.vercel.app",
+    description: "Security researcher specializing in bug bounty hunting and vulnerability disclosure.",
+    url: "https://benzimmermann.dev",
     siteName: "Ben Zimmermann",
     images: [
       {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ben Zimmermann - Security Researcher",
-    description: "16-year-old security researcher specializing in bug bounty hunting and vulnerability disclosure. $20K GitHub bounty recipient.",
+    description: "Security researcher specializing in bug bounty hunting and vulnerability disclosure.",
     images: ["/images/seo.jpg"],
   },
 };
