@@ -12,10 +12,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row border-t border-zinc-800 pt-12">
           <div className="flex flex-col items-center gap-2 sm:items-start">
             <span className="text-sm font-medium text-foreground">
-              © 2025 Ben Zimmermann
-            </span>
-            <span className="text-xs text-muted-foreground font-mono">
-              0day &gt; 1day
+              © 2026 Ben Zimmermann
             </span>
           </div>
 
