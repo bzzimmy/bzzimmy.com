@@ -36,7 +36,7 @@ export default function Home() {
           </BlurFade>
 
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
-            <div className="flex gap-4 pt-2">
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
               <a
                 href="https://github.com/bzzimmy"
                 target="_blank"
@@ -67,7 +67,7 @@ export default function Home() {
 
           {/* In-Page Navigation */}
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <nav className="mt-12 flex items-center gap-6 sm:gap-8">
+            <nav className="mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
               <a
                 href="#research"
                 className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
