@@ -122,9 +122,9 @@ export function ResearchSection() {
               {/* Content Column */}
               <div className="flex flex-col gap-2">
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {item.company}
-                    <span className="text-muted-foreground font-normal">
+                    <span className="text-muted-foreground font-normal ml-2">
                        — {item.title}
                     </span>
                   </h3>
@@ -184,9 +184,9 @@ export function ResearchSection() {
                   {/* Content Column */}
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-between gap-4">
-                      <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-foreground">
                         {item.company}
-                        <span className="text-muted-foreground font-normal">
+                        <span className="text-muted-foreground font-normal ml-2">
                            — {item.title}
                         </span>
                       </h3>

@@ -75,7 +75,7 @@
 :root {
   --radius: 0.625rem;
   /* Dark theme - Softer black background with white text */
-  --background: oklch(0.14 0 0); /* Soft charcoal black */
+  --background: #121212; /* Darker background as requested */
   --foreground: oklch(0.98 0 0); /* White */
   --card: oklch(0.18 0 0); /* Dark gray for cards */
   --card-foreground: oklch(0.98 0 0); /* White text on cards */

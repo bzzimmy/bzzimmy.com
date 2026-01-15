@@ -75,7 +75,7 @@ export function ProjectsSection() {
               >
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-4">
-                    <h3 className="text-xl font-semibold text-foreground group-hover:text-purple-100 transition-colors flex items-center gap-2">
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-purple-100 transition-colors flex flex-wrap items-center gap-2">
                       {project.title}
                       <ArrowUpRight className="h-4 w-4 text-zinc-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-purple-400 opacity-0 sm:opacity-100" />
                     </h3>

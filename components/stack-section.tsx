@@ -66,7 +66,7 @@ export function StackSection() {
               }`}
             >
               <div className="flex flex-col gap-1">
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-purple-100 transition-colors">
+                <h3 className="text-lg font-semibold text-foreground transition-colors">
                   {group.category}
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -74,7 +74,7 @@ export function StackSection() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-6 flex-wrap">
                 {group.tools.map((tool, tIndex) => (
                   <div
                     key={tIndex}
