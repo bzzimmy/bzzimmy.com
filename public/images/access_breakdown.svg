@@ -1,0 +1,24 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Space Grotesk', sans-serif; fill: #fafafa; }
+      .title { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 400; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.05em; }
+      .value { font-size: 16px; font-weight: 600; fill: #a855f7; }
+      .bar { fill: #a855f7; rx: 4; }
+      .total { font-size: 16px; font-weight: 600; opacity: 0.8; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="800" height="400" fill="#121212" />
+  <text x="400" y="60" class="title">Repository Access Breakdown</text>
+  <text x="50" y="120" class="label">Push Access</text>
+  <rect x="50" y="132" width="578" height="36" class="bar" />
+  <text x="640" y="156" class="value">385</text>
+  <text x="50" y="210" class="label">Pull Only</text>
+  <rect x="50" y="222" width="322" height="36" class="bar" />
+  <text x="385" y="246" class="value">215</text>
+  <text x="50" y="300" class="label">Admin Access</text>
+  <rect x="50" y="312" width="96" height="36" class="bar" />
+  <text x="160" y="336" class="value">64</text>
+  <text x="400" y="375" class="total">TOTAL REPOSITORIES: 664</text>
+</svg>
