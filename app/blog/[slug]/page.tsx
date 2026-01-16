@@ -121,19 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </BlurFade>
 
-        {/* Footer navigation */}
-        <BlurFade delay={BLUR_FADE_DELAY * 4} blur="4px">
-          <div className="mt-16 pt-8 border-t border-border">
-            <Link
-              href="/blog"
-              className="group inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-              Back to all posts
-            </Link>
-          </div>
-        </BlurFade>
-      </article>
+        </article>
 
       <div className="mt-auto w-full">
         <Footer delay={BLUR_FADE_DELAY * 5} />
