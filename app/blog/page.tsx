@@ -98,17 +98,17 @@ export default function BlogPage() {
 
                     <div className="flex items-center gap-4 mt-1">
                       {post.readingTime && (
-                        <span className="font-mono text-xs text-zinc-500 flex items-center gap-1">
+                        <span className="font-mono text-xs text-zinc-500 flex items-center gap-1 whitespace-nowrap">
                           <Clock className="h-3 w-3" />
                           {post.readingTime}
                         </span>
                       )}
                       {post.tags.length > 0 && (
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
                           {post.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="font-mono text-xs text-purple-400/70 bg-purple-400/10 px-2 py-0.5 rounded"
+                              className="font-mono text-xs text-purple-400/70 bg-purple-400/10 px-2 py-0.5 rounded whitespace-nowrap"
                             >
                               {tag}
                             </span>

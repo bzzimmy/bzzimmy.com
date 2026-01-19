@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
               </span>
 
               {post.readingTime && (
-                <span className="font-mono flex items-center gap-1.5">
+                <span className="font-mono flex items-center gap-1.5 whitespace-nowrap">
                   <Clock className="h-3.5 w-3.5" />
                   {post.readingTime}
                 </span>
@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-xs text-purple-400/70 bg-purple-400/10 px-2 py-0.5 rounded"
+                    className="font-mono text-xs text-purple-400/70 bg-purple-400/10 px-2 py-0.5 rounded whitespace-nowrap"
                   >
                     {tag}
                   </span>
