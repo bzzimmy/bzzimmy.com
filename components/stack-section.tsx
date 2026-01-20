@@ -1,14 +1,22 @@
 "use client";
 
-import Image from "next/image";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { IconType } from "react-icons";
+import {
+  SiPython,
+  SiGnubash,
+  SiCplusplus,
+  SiBurpsuite,
+  SiWireshark,
+  SiDiscord,
+  SiGithub,
+} from "react-icons/si";
 
 const BLUR_FADE_DELAY = 0.04;
 
 type Tool = {
   name: string;
-  icon: string;
-  className?: string;
+  icon: IconType;
 };
 
 const stack: Array<{
@@ -20,25 +28,25 @@ const stack: Array<{
     category: "Automation & Scripting",
     description: "Building custom scanners and automation tooling",
     tools: [
-      { name: "Python", icon: "/images/python.png" },
-      { name: "Bash", icon: "/images/bash.png" },
-      { name: "C++", icon: "/images/cplusplus.png" },
+      { name: "Python", icon: SiPython },
+      { name: "Bash", icon: SiGnubash },
+      { name: "C++", icon: SiCplusplus },
     ],
   },
   {
     category: "Security Operations",
     description: "Network analysis, interception, and reverse engineering",
     tools: [
-      { name: "Burp Suite", icon: "/images/burpsuite.png" },
-      { name: "Wireshark", icon: "/images/wireshark.png" },
+      { name: "Burp Suite", icon: SiBurpsuite },
+      { name: "Wireshark", icon: SiWireshark },
     ],
   },
   {
     category: "Platforms",
     description: "Where I deploy code and engage with the community",
     tools: [
-      { name: "Discord", icon: "/images/discord.png", className: "scale-[1.7]" }, 
-      { name: "GitHub", icon: "/images/github.png", className: "invert scale-[1.7]" }, 
+      { name: "Discord", icon: SiDiscord },
+      { name: "GitHub", icon: SiGithub },
     ],
   },
 ];
@@ -78,21 +86,9 @@ export function StackSection() {
                 {group.tools.map((tool, tIndex) => (
                   <div
                     key={tIndex}
-                    className="group/tool relative h-10 w-10 flex items-center justify-center"
+                    className="h-10 w-10 flex items-center justify-center"
                   >
-                    <div className={`relative h-full w-full ${tool.className || ""}`}>
-                      <Image
-                        src={tool.icon}
-                        alt={tool.name}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-
-                    {/* Custom Tooltip */}
-                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-zinc-900 px-2 py-1 text-xs font-medium text-zinc-200 opacity-0 shadow-lg ring-1 ring-zinc-800 transition-all duration-200 delay-500 group-hover/tool:-top-8 group-hover/tool:opacity-100">
-                      {tool.name}
-                    </span>
+                    <tool.icon className="h-6 w-6 text-zinc-400" />
                   </div>
                 ))}
               </div>
