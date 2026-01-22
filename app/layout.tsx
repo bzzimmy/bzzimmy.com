@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     description: "Security researcher specializing in bug bounty hunting and vulnerability disclosure.",
     images: ["/images/seo.jpg"],
   },
+  other: {
+    portal: "⠛⠕⠀⠞⠕⠀⠃⠑⠝⠵⠊⠍⠍⠑⠗⠍⠁⠝⠝⠲⠙⠑⠧⠸⠌⠏⠕⠗⠞⠁⠇",
+  },
 };
 
 export const viewport: Viewport = {
@@ -55,9 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head dangerouslySetInnerHTML={{
-        __html: '<!-- ⠛⠕ ⠞⠕ ⠃⠑⠝⠵⠊⠍⠍⠑⠗⠍⠁⠝⠝⠲⠙⠑⠧⠌⠏⠕⠗⠞⠁⠇ -->'
-      }} />
+      <head />
       <body
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
