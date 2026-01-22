@@ -55,6 +55,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head dangerouslySetInnerHTML={{
+        __html: '<!-- ⠛⠕ ⠞⠕ ⠃⠑⠝⠵⠊⠍⠍⠑⠗⠍⠁⠝⠝⠲⠙⠑⠧⠌⠏⠕⠗⠞⠁⠇ -->'
+      }} />
       <body
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
