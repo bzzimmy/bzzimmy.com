@@ -86,9 +86,9 @@ export function StackSection() {
                 {group.tools.map((tool, tIndex) => (
                   <div
                     key={tIndex}
-                    className="h-10 w-10 flex items-center justify-center"
+                    className="h-9 w-9 flex items-center justify-center"
                   >
-                    <tool.icon className="h-6 w-6 text-zinc-400" />
+                    <tool.icon className="h-full w-full text-zinc-400" />
                   </div>
                 ))}
               </div>
