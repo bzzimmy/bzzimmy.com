@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const BLUR_FADE_DELAY = 0.04;
@@ -13,13 +13,13 @@ const projects = [
     link: "https://github.com/bzzimmy/easyapex",
     stats: "Open Source",
   },
-  {
-    title: "CodePen Scraper",
-    description: "High-performance GraphQL harvester that enumerated 600k+ users and 8M+ pens for secret scanning. Features concurrent workers, proxy rotation, and SQLite state tracking.",
-    tech: ["Python", "GraphQL", "SQLite"],
-    link: "#",
-    stats: "Private",
-  },
+  // {
+  //   title: "CodePen Scraper",
+  //   description: "High-performance GraphQL harvester that enumerated 600k+ users and 8M+ pens for secret scanning. Features concurrent workers, proxy rotation, and SQLite state tracking.",
+  //   tech: ["Python", "GraphQL", "SQLite"],
+  //   link: "#",
+  //   stats: "Private",
+  // },
 ];
 
 export function ProjectsSection() {
@@ -31,7 +31,7 @@ export function ProjectsSection() {
             Projects
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Open source tools and scanners I've built to automate the hunt.
+            Open source tools and scanners I&apos;ve built to automate the hunt.
           </p>
         </div>
       </BlurFade>

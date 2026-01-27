@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { BlurFade } from "@/components/ui/blur-fade";
@@ -30,8 +31,8 @@ export default function Home() {
 
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground mt-2">
-              Hey, I'm Ben. I'm a security researcher from California.
-              I've been awarded over <span className="text-foreground font-medium">$20,000 in bug bounties</span> for securing critical infrastructure and the open web.
+              Hey, I&apos;m Ben. I&apos;m a security researcher from California.
+              I&apos;ve been awarded over <span className="text-foreground font-medium">$20,000 in bug bounties</span> for securing critical infrastructure and the open web.
             </p>
           </BlurFade>
 
@@ -98,13 +99,13 @@ export default function Home() {
 
               <span className="text-zinc-700 select-none">/</span>
 
-              <a
+              <Link
                 href="/blog"
                 className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
                 Blog
-              </a>
+              </Link>
             </nav>
           </BlurFade>
         </div>
