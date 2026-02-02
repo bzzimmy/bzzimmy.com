@@ -81,13 +81,13 @@ const additionalDisclosures = [
   {
     company: "NPR",
     title: "Early Security Research",
-    bounty: "Recognition",
+    bounty: "Featured",
     severity: "Low",
     description: "Discovered a Google Family Link security bypass at age 9, marking the beginning of my security research journey.",
     icon: FileCode,
     date: "Apr 2018",
     link: "https://www.npr.org/2018/06/18/620005246/a-guide-to-parental-controls-for-kids-tech-use",
-    linkText: "Featured on NPR",
+    linkText: "Featured in NPR",
   },
 ];
 
