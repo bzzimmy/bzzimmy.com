@@ -1,39 +1,29 @@
 # bzzimmy.com
 
-A modern portfolio website showcasing security research achievements and bug bounty work. Built with Next.js, React, and Tailwind CSS with custom animated components.
+A portfolio website showcasing security research achievements and bug bounty work.
 
 ![Portfolio Preview](./public/images/preview.png)
 
-## Features
-
-- **Security Research Showcase** - Displays vulnerability disclosures with bounty amounts and impact details
-- **Tech Stack Section** - Highlights tools and languages used in security research
-- **Projects Portfolio** - Open-source projects and custom security tools
-- **Animated UI** - Custom components featuring blur-fade animations, gradient text, and particle background effects
-- **Dark Theme** - Purple and pink accent colors with smooth animations
-- **Responsive Design** - Optimized for all screen sizes
-
 ## Tech Stack
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Radix UI Components
-- Motion (animations)
-- React Hook Form + Zod (form validation)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![Radix UI](https://img.shields.io/badge/Radix_UI-161618?style=flat&logo=radix-ui&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
+
+## Features
+
+- Security research showcase with vulnerability disclosures
+- Projects portfolio for open-source tools
+- Animated UI with blur-fade and particle effects
+- Dark theme with responsive design
 
 ## Getting Started
 
-Install dependencies:
-
 ```bash
 npm install
-```
-
-Run the development server:
-
-```bash
 npm run dev
 ```
 
@@ -42,3 +32,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ## Deployment
 
 Deployed on [Vercel](https://vercel.com) at [benzimmermann.dev](https://benzimmermann.dev)
+
+## License
+
+[MIT](LICENSE)
