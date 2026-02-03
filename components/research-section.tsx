@@ -141,6 +141,8 @@ export function ResearchSection() {
                     <>
                       <a
                         href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
                       >
                         {item.linkText}
@@ -203,6 +205,8 @@ export function ResearchSection() {
                         <>
                           <a
                             href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
                           >
                             {item.linkText}

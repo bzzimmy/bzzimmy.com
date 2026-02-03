@@ -71,6 +71,8 @@ export function ProjectsSection() {
             ) : (
               <a
                 href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col gap-4 transition-opacity hover:opacity-100"
               >
                 <div className="flex flex-col gap-2">
