@@ -31,7 +31,7 @@ export default function Home() {
 
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground mt-2">
-              Hey, I&apos;m Ben. I&apos;m a security researcher from California.
+              Hey, I&apos;m Ben. I&apos;m a 16-year-old security researcher from California.
               I&apos;ve been awarded over <span className="text-foreground font-medium">$20,000 in bug bounties</span> for securing critical infrastructure and the open web.
             </p>
           </BlurFade>
