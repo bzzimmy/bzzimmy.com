@@ -17,7 +17,7 @@ A portfolio website showcasing security research achievements and bug bounty wor
 
 - Security research showcase with vulnerability disclosures
 - Projects portfolio for open-source tools
-- Animated UI with blur-fade and particle effects
+- Animated UI with particle effects
 - Dark theme with responsive design
 
 ## Getting Started
