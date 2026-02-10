@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { SiHackerone } from "react-icons/si";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { ResearchSection } from "@/components/research-section";
 import { ProjectsSection } from "@/components/projects-section";
@@ -29,7 +30,7 @@ export default function Home() {
             I&apos;ve been awarded over <span className="text-foreground font-medium">$20,000 in bug bounties</span> for securing critical infrastructure and the open web.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 pt-2">
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
             <a
               href="https://github.com/bzzimmy"
               target="_blank"
@@ -38,6 +39,15 @@ export default function Home() {
             >
               <Github className="h-4 w-4" />
               <span>GitHub</span>
+            </a>
+            <a
+              href="https://hackerone.com/kernelrocks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-xl rounded-tr-none rounded-bl-none border border-border bg-background/50 px-5 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-accent hover:text-accent-foreground hover:rounded-bl-xl hover:rounded-tr-xl hover:rounded-tl-none hover:rounded-br-none"
+            >
+              <SiHackerone className="h-4 w-4" />
+              <span>HackerOne</span>
             </a>
             <a
               href="https://www.linkedin.com/in/benzimm/"
