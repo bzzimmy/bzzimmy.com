@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { SiHackerone } from "react-icons/si";
 
 export function Footer() {
   return (
@@ -18,6 +19,15 @@ export function Footer() {
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             <Github className="h-5 w-5" />
+          </a>
+          <a
+            href="https://hackerone.com/kernelrocks/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="HackerOne profile"
+          >
+            <SiHackerone className="h-5 w-5" />
           </a>
           <a
             href="https://www.linkedin.com/in/benzimm/"
