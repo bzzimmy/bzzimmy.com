@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import { SiHackerone } from "react-icons/si";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { ResearchSection } from "@/components/research-section";
@@ -31,15 +31,6 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <a
-              href="https://github.com/bzzimmy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-xl rounded-tr-none rounded-bl-none border border-border bg-background/50 px-5 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-accent hover:text-accent-foreground hover:rounded-bl-xl hover:rounded-tr-xl hover:rounded-tl-none hover:rounded-br-none"
-            >
-              <Github className="h-4 w-4" />
-              <span>GitHub</span>
-            </a>
             <a
               href="https://hackerone.com/kernelrocks/"
               target="_blank"
