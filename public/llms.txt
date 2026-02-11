@@ -14,10 +14,10 @@ Ben is a California-based security researcher with a focus on secret scanning, i
 ## Projects
 
 - [EasyApex](https://github.com/bzzimmy/easyapex): Automated Chrome extension for solving Apex Learning quizzes using Vision AI.
-- [CodePen Scraper](https://github.com/bzzimmy): High-performance GraphQL harvester for secret scanning.
 
 ## Optional
 
 - [GitHub Profile](https://github.com/bzzimmy)
 - [LinkedIn](https://www.linkedin.com/in/benzimm/)
+- [HackerOne](https://hackerone.com/kernelrocks/)
 - [Email Contact](mailto:kernelrocks@proton.me)
