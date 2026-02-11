@@ -2,7 +2,7 @@
 
 A portfolio website showcasing security research achievements and bug bounty work.
 
-![Portfolio Preview](./public/images/preview.png)
+![Portfolio Preview](https://api.microlink.io/?url=https://benzimmermann.dev&screenshot&meta=false&embed=screenshot.url&viewport.width=1000&viewport.height=500)
 
 ## Tech Stack
 
