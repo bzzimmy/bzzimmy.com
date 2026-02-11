@@ -8,6 +8,7 @@ import {
   SiDiscord,
   SiGithub,
 } from "react-icons/si";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 type Tool = {
   name: string;
@@ -60,32 +61,33 @@ export function StackSection() {
 
       <div className="flex flex-col">
         {stack.map((group, index) => (
-          <div
-            key={index}
-            className={`group flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between ${
-              index !== stack.length - 1 ? "border-b border-zinc-800" : ""
-            }`}
-          >
-            <div className="flex flex-col gap-1">
-              <h3 className="text-lg font-semibold text-foreground transition-colors">
-                {group.category}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {group.description}
-              </p>
-            </div>
+          <ScrollReveal key={index} delay={index * 0.1}>
+            <div
+              className={`group flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between ${
+                index !== stack.length - 1 ? "border-b border-zinc-800" : ""
+              }`}
+            >
+              <div className="flex flex-col gap-1">
+                <h3 className="text-lg font-semibold text-foreground transition-colors">
+                  {group.category}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {group.description}
+                </p>
+              </div>
 
-            <div className="flex items-center gap-6 flex-wrap">
-              {group.tools.map((tool, tIndex) => (
-                <div
-                  key={tIndex}
-                  className="h-9 w-9 flex items-center justify-center"
-                >
-                  <tool.icon className="h-full w-full text-zinc-400" />
-                </div>
-              ))}
+              <div className="flex items-center gap-6 flex-wrap">
+                {group.tools.map((tool, tIndex) => (
+                  <div
+                    key={tIndex}
+                    className="h-9 w-9 flex items-center justify-center"
+                  >
+                    <tool.icon className="h-full w-full text-zinc-400" />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </section>

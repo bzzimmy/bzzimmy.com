@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
 import { SiHackerone } from "react-icons/si";
 import { AuroraText } from "@/components/ui/aurora-text";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ResearchSection } from "@/components/research-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { StackSection } from "@/components/stack-section";
@@ -102,9 +103,15 @@ export default function Home() {
 
       </main>
 
-      <ResearchSection />
-      <StackSection />
-      <ProjectsSection />
+      <ScrollReveal className="w-full flex flex-col items-center">
+        <ResearchSection />
+      </ScrollReveal>
+      <ScrollReveal className="w-full flex flex-col items-center" delay={0.1}>
+        <StackSection />
+      </ScrollReveal>
+      <ScrollReveal className="w-full flex flex-col items-center" delay={0.1}>
+        <ProjectsSection />
+      </ScrollReveal>
       <Footer />
 
     </div>

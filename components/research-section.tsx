@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Github, Plane, FileCode, Puzzle, ChevronDown, Home } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const mainDisclosures = [
   {
@@ -105,49 +106,51 @@ export function ResearchSection() {
 
       <div className="flex flex-col gap-12">
         {mainDisclosures.map((item, index) => (
-          <div key={index} className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
-            {/* Date Column */}
-            <div className="shrink-0 w-24 pt-1">
-              <span className="font-mono text-sm text-zinc-500">
-                {item.date}
-              </span>
-            </div>
-
-            {/* Content Column */}
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-lg font-semibold text-foreground">
-                  {item.company}
-                  <span className="text-muted-foreground font-normal ml-2">
-                     — {item.title}
-                  </span>
-                </h3>
-
-                <div className="shrink-0">
-                  <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
-                    {item.bounty}
-                  </span>
-                </div>
+          <ScrollReveal key={index} delay={index * 0.1}>
+            <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
+              {/* Date Column */}
+              <div className="shrink-0 w-24 pt-1">
+                <span className="font-mono text-sm text-zinc-500">
+                  {item.date}
+                </span>
               </div>
 
-              <p className="text-base leading-relaxed text-muted-foreground/80">
-                {item.link && item.linkText && (
-                  <>
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
-                    >
-                      {item.linkText}
-                    </a>
-                    {". "}
-                  </>
-                )}
-                {item.description}
-              </p>
+              {/* Content Column */}
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {item.company}
+                    <span className="text-muted-foreground font-normal ml-2">
+                       — {item.title}
+                    </span>
+                  </h3>
+
+                  <div className="shrink-0">
+                    <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
+                      {item.bounty}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-base leading-relaxed text-muted-foreground/80">
+                  {item.link && item.linkText && (
+                    <>
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
+                      >
+                        {item.linkText}
+                      </a>
+                      {". "}
+                    </>
+                  )}
+                  {item.description}
+                </p>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
 
