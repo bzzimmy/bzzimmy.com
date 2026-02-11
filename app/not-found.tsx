@@ -1,26 +1,45 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { AuroraText } from "@/components/ui/aurora-text";
 import { Footer } from "@/components/footer";
+
+const asciiArt = `⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠷⠛⠿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣷⠼⠶⠳⠾⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣏⣤⣄⣶⡤⢤⣹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠏⠁⠉⠁⡀⠀⡈⠛⠹⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⠓⠚⠓⠘⠋⠘⠛⠙⠓⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠤⣴⢦⡦⠄⠾⠇⢸⡷⣤⣤⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠗⠾⢋⣀⡀⠀⣤⡄⢀⣀⣀⣉⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠗⠈⣭⣄⣀⣤⣤⣤⣄⠀⣤⣙⡛⠻⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣯⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⡟⠛⠻⡟⠋⠉⠉⠉⢉⣽⡿⠛⠻⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣟⠻⠷⡆⢀⣀⣀⣀⣤⣤⣾⣁⣀⣀⡴⠋⣈⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣟⣿⢿⣋⣻⠿⠚⠛⠉⠁⠀⠤⠀⠺⠦⠬⣽⣿⣦⣾⡋⠀⠹⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣷⡾⠋⠁⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⡀⠀⠉⢙⠻⣿⣷⣤⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⠃⠀⠀⢀⣠⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣝⠾⣝⠿⣿⠿⡄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⣾⡿⠀⢁⣠⣴⣿⡟⣿⣽⢻⡇⠀⢰⣿⣿⣿⣿⢸⡿⢹⢻⣿⣿⣿⡶⣾⣿⣳⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⡞⠉⣣⣶⣿⣿⣯⢻⡇⢹⣷⣟⢷⣦⣬⣽⣿⣿⢏⣿⢇⡏⠘⠋⢻⣿⣿⣿⣿⠹⣿⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣾⠛⠛⢿⣿⣿⡿⡜⡄⢻⡌⠻⣝⠃⢉⠛⠛⠋⣵⣿⣫⠟⢰⡆⢀⣾⣿⣿⣯⡿⢿⣆⢳⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣼⣅⠈⢻⠶⠆⠀⠉⠳⣽⠄⠙⠦⠈⠓⠾⠦⠽⠿⠷⠋⠁⠀⠏⠀⠘⢛⣿⣵⣿⠿⣶⡌⠛⢷⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣼⣥⣿⣏⡋⠀⠦⠀⣀⡀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣤⡴⣺⣿⣷⠻⠿⠆⠋⣈⣳⣬⣧⠀⠀⠀⠀
+⠀⠀⠀⢰⣉⣹⣯⠉⠙⠒⢠⣀⠈⠁⠀⠀⠈⠛⠓⠒⠒⠒⠒⠛⠛⠉⠩⣥⢾⣻⣥⣬⡿⠄⠀⠒⢾⡉⢀⣉⣹⣧⠀⠀⠀
+⠀⠀⢰⢻⣧⣉⠉⢻⣿⠦⢤⣉⣈⠉⠛⠒⠲⠶⠶⠶⣶⠶⣶⠶⠶⠶⣾⣛⣛⣙⣽⣿⡷⠴⠶⠲⡟⠉⠻⣧⡀⠘⣇⠀⠀
+⠀⢠⣿⡙⠛⠛⣿⣿⢦⡀⠀⣈⡉⠀⠉⢻⡟⠛⠶⠶⠟⠿⢾⡿⠚⡛⠛⢛⣋⠉⣠⣤⠀⣤⡦⠼⠿⠶⣿⡛⢿⢻⣿⣆⠀
+⠠⣿⣬⣽⣿⣴⣿⣯⣬⣤⣤⣽⣿⣦⣤⣴⣥⣤⣧⣦⣴⣴⣿⣷⣤⣯⣤⣾⣿⣦⣿⣧⣤⣥⣴⣤⣤⣤⣤⣽⣿⣿⣿⣿⡆`;
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center font-sans pt-32 sm:pt-40">
-      <main className="flex w-full max-w-2xl flex-1 flex-col items-center justify-center px-6 text-center">
+    <div className="flex min-h-screen flex-col items-center font-sans">
+      <main className="flex w-full flex-1 flex-col items-center justify-center px-6 text-center">
         <div className="flex flex-col items-center gap-6">
-          <h1 className="text-8xl font-bold tracking-tight sm:text-9xl">
-            <AuroraText colors={["#c084fc", "#a855f7", "#e879f9", "#ffffff"]} speed={0.5}>
-              404
-            </AuroraText>
+          <pre className="text-[0.45rem] leading-[0.5rem] sm:text-[0.55rem] sm:leading-[0.6rem] md:text-xs md:leading-[0.75rem] text-zinc-400 select-none" aria-hidden="true">
+            {asciiArt}
+          </pre>
+
+          <h1 className="font-mono text-lg tracking-widest uppercase text-zinc-400 sm:text-xl">
+            page not found
           </h1>
-
-          <p className="text-xl font-medium text-zinc-400">
-            Page not found
-          </p>
-
-          <p className="max-w-md text-lg leading-relaxed text-muted-foreground">
-            This page doesn&apos;t exist or has been moved. Let&apos;s get you back to safety.
-          </p>
 
           <Link
             href="/"
