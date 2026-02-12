@@ -7,6 +7,7 @@ import { ResearchSection } from "@/components/research-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { StackSection } from "@/components/stack-section";
 import { Footer } from "@/components/footer";
+import { HoverExpand } from "@/components/ui/hover-expand";
 
 export default function Home() {
   return (
@@ -65,8 +66,8 @@ export default function Home() {
               href="#research"
               className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
-              Research
+              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)] pointer-events-none" />
+              <HoverExpand activeColor="white">Research</HoverExpand>
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
@@ -75,8 +76,8 @@ export default function Home() {
               href="#stack"
               className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
-              Tech Stack
+              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)] pointer-events-none" />
+              <HoverExpand activeColor="white">Tech Stack</HoverExpand>
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
@@ -85,8 +86,8 @@ export default function Home() {
               href="#projects"
               className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
-              Projects
+              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)] pointer-events-none" />
+              <HoverExpand activeColor="white">Projects</HoverExpand>
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
@@ -95,8 +96,8 @@ export default function Home() {
               href="/blog"
               className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
-              Blog
+              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)] pointer-events-none" />
+              <HoverExpand activeColor="white">Blog</HoverExpand>
             </Link>
           </nav>
         </div>

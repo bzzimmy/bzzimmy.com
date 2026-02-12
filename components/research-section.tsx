@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Github, Plane, FileCode, Puzzle, ChevronDown, Home } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { HoverExpand } from "@/components/ui/hover-expand";
 
 const mainDisclosures = [
   {
@@ -225,7 +226,7 @@ export function ResearchSection() {
           onClick={() => setShowMore(!showMore)}
           className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-purple-400"
         >
-          <span>{showMore ? "Show less" : "Show more"}</span>
+          <HoverExpand>{showMore ? "Show less" : "Show more"}</HoverExpand>
           <ChevronDown className={`h-4 w-4 transition-transform ${showMore ? "rotate-180" : ""}`} />
         </button>
       </div>
