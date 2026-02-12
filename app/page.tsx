@@ -62,41 +62,25 @@ export default function Home() {
 
           {/* In-Page Navigation */}
           <nav className="mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
-            <a
-              href="#research"
-              className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)] pointer-events-none" />
+            <a href="#research" className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground">
               <HoverExpand activeColor="white">Research</HoverExpand>
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
 
-            <a
-              href="#stack"
-              className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)] pointer-events-none" />
+            <a href="#stack" className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground">
               <HoverExpand activeColor="white">Tech Stack</HoverExpand>
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
 
-            <a
-              href="#projects"
-              className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)] pointer-events-none" />
+            <a href="#projects" className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground">
               <HoverExpand activeColor="white">Projects</HoverExpand>
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
 
-            <Link
-              href="/blog"
-              className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <span className="h-2 w-2 rounded-full bg-zinc-700 transition-all group-hover:bg-purple-500 group-hover:shadow-[0_0_8px_rgba(168,85,247,0.5)] pointer-events-none" />
+            <Link href="/blog" className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground">
               <HoverExpand activeColor="white">Blog</HoverExpand>
             </Link>
           </nav>
