@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { Github, Plane, FileCode, Puzzle, ChevronDown, Home } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { HoverExpand } from "@/components/ui/hover-expand";
@@ -166,15 +166,11 @@ export function ResearchSection() {
         ))}
       </div>
 
-      <AnimatePresence>
-        {showMore && (
-          <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            exit={{ height: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
+      <motion.div
+        animate={{ height: showMore ? "auto" : 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
             <div className="flex flex-col gap-12 pt-12">
               {additionalDisclosures.map((item, index) => (
                 <motion.div
@@ -228,9 +224,7 @@ export function ResearchSection() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </motion.div>
 
       <div className="mt-12 flex justify-start">
         <button
