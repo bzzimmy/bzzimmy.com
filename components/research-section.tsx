@@ -8,6 +8,17 @@ import { HoverExpand } from "@/components/ui/hover-expand";
 
 const mainDisclosures = [
   {
+    company: "Red Hat",
+    title: "SSH Key Exposure",
+    bounty: "Hall of Fame",
+    severity: "Critical",
+    description: "Discovered a leaked SSH private key granting write access to eclipse-che/che, the upstream repository for Red Hat OpenShift Dev Spaces.",
+    icon: FileCode,
+    date: "Feb 2026",
+    link: "https://access.redhat.com/articles/66234",
+    linkText: "Acknowledged by Red Hat Security",
+  },
+  {
     company: "TechCrunch",
     title: "Home Depot Exposure",
     bounty: "Featured",
