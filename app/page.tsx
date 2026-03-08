@@ -7,7 +7,7 @@ import { ResearchSection } from "@/components/research-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { StackSection } from "@/components/stack-section";
 import { Footer } from "@/components/footer";
-import { HoverExpand } from "@/components/ui/hover-expand";
+
 
 export default function Home() {
   return (
@@ -63,25 +63,25 @@ export default function Home() {
           {/* In-Page Navigation */}
           <nav className="mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
             <a href="#research" className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground">
-              <HoverExpand activeColor="white">Research</HoverExpand>
+              Research
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
 
             <a href="#stack" className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground">
-              <HoverExpand activeColor="white">Tech Stack</HoverExpand>
+              Tech Stack
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
 
             <a href="#projects" className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground">
-              <HoverExpand activeColor="white">Projects</HoverExpand>
+              Projects
             </a>
 
             <span className="text-zinc-700 select-none">/</span>
 
             <Link href="/blog" className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground">
-              <HoverExpand activeColor="white">Blog</HoverExpand>
+              Blog
             </Link>
           </nav>
         </div>

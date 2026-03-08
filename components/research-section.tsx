@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { Github, Plane, FileCode, Puzzle, ChevronDown, Home } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { HoverExpand } from "@/components/ui/hover-expand";
+
 
 const mainDisclosures = [
   {
@@ -47,6 +47,9 @@ const mainDisclosures = [
     icon: Plane,
     date: "Nov 2025",
   },
+];
+
+const additionalDisclosures = [
   {
     company: "Vue.js",
     title: "Admin API Key Exposure",
@@ -58,9 +61,6 @@ const mainDisclosures = [
     link: "https://github.com/vuejs/core/blob/main/SECURITY.md",
     linkText: "Acknowledged in the Vue.js Security Hall of Fame",
   },
-];
-
-const additionalDisclosures = [
   {
     company: "Chrome Extensions",
     title: "AI Auth Bypass",
@@ -231,7 +231,7 @@ export function ResearchSection() {
           onClick={() => setShowMore(!showMore)}
           className="group flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-purple-400"
         >
-          <HoverExpand>{showMore ? "Show less" : "Show more"}</HoverExpand>
+          {showMore ? "Show less" : "Show more"}
           <ChevronDown className={`h-4 w-4 transition-transform ${showMore ? "rotate-180" : ""}`} />
         </button>
       </div>
