@@ -3,9 +3,16 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import { createHighlighter } from "shiki";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { Footer } from "@/components/footer";
+
+const highlighter = await createHighlighter({
+  themes: ["github-dark-default"],
+  langs: ["python", "javascript", "typescript", "json", "bash", "shell"],
+});
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -107,7 +114,36 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Content */}
         <div className="prose">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+            components={{
+              pre({ children }) {
+                const codeEl = children as React.ReactElement<{
+                  className?: string;
+                  children?: React.ReactNode;
+                }>;
+                const className = codeEl?.props?.className || "";
+                const match = /language-(\w+)/.exec(className);
+                if (match) {
+                  const code = String(codeEl?.props?.children || "").replace(
+                    /\n$/,
+                    ""
+                  );
+                  const html = highlighter.codeToHtml(code, {
+                    lang: match[1],
+                    theme: "github-dark-default",
+                  });
+                  return (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: html }}
+                    />
+                  );
+                }
+                return <pre>{children}</pre>;
+              },
+            }}
+          >
             {post.content}
           </ReactMarkdown>
         </div>

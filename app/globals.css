@@ -224,6 +224,10 @@
   @apply bg-card rounded-lg p-4 overflow-x-auto my-4 border border-border;
 }
 
+.prose pre.shiki {
+  background-color: var(--card) !important;
+}
+
 .prose code {
   @apply font-mono text-sm;
 }
