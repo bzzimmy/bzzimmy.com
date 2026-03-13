@@ -1,9 +1,9 @@
 ---
 title: "I Found 39 Algolia Admin Keys Exposed Across Open Source Documentation Sites"
-date: "2026-03-12"
+date: "2026-03-13"
 summary: "A systematic audit of Algolia DocSearch found 39 admin API keys exposed across projects like Home Assistant, KEDA, and vcluster."
 tags: ["security-research", "algolia", "docsearch", "api-keys", "disclosure"]
-draft: true
+draft: false
 cover: /images/blog/docsearch-admin-keys-cover.png
 ---
 
@@ -66,6 +66,7 @@ Someone could poison a project's search results with malicious links, redirect u
 SUSE/Rancher acknowledged the report within two days and rotated the key. That key is now fully revoked. Home Assistant also responded and began remediation, though the original key remains active.
 
 I compiled the full list of affected keys and emailed Algolia directly a few weeks ago. No response. As of today, all remaining keys are still active.
+
 ## The root cause
 
 This isn't really about 39 individual misconfigurations. Algolia's DocSearch program provides search-only keys, but many sites [run their own crawler](https://docsearch.algolia.com/docs/legacy/run-your-own/) and end up using their write or admin key in the frontend config instead. Algolia's own docs warn against this, but it clearly happens at scale.
