@@ -8,6 +8,17 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const mainDisclosures = [
   {
+    company: "Algolia DocSearch",
+    title: "39 Admin Keys Exposed",
+    bounty: "Resolved",
+    severity: "Critical",
+    description: "Scraped 15,000 documentation sites and found 39 Algolia admin API keys with full write access to search indexes for projects like Home Assistant and KEDA.",
+    icon: FileCode,
+    date: "Mar 2026",
+    link: "/blog/algolia-docsearch-admin-keys",
+    linkText: "Read the full write-up",
+  },
+  {
     company: "Red Hat",
     title: "SSH Key Exposure",
     bounty: "Hall of Fame",
@@ -38,6 +49,9 @@ const mainDisclosures = [
     icon: Github,
     date: "Nov 2025",
   },
+];
+
+const additionalDisclosures = [
   {
     company: "TripAdvisor",
     title: "Sensitive Data Exposure",
@@ -47,9 +61,6 @@ const mainDisclosures = [
     icon: Plane,
     date: "Nov 2025",
   },
-];
-
-const additionalDisclosures = [
   {
     company: "Vue.js",
     title: "Admin API Key Exposure",
