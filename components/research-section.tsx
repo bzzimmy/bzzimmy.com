@@ -8,6 +8,15 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const mainDisclosures = [
   {
+    company: "Algolia",
+    title: "Leaked Netlify Token Exposure",
+    bounty: "$700",
+    severity: "High",
+    description: "Discovered a leaked Netlify token granting access to Algolia's Enterprise account, 44 sites, and DNS records for yarnpkg.com.",
+    icon: FileCode,
+    date: "Mar 2026",
+  },
+  {
     company: "Algolia DocSearch",
     title: "39 Admin Keys Exposed",
     bounty: "Resolved",
@@ -40,6 +49,9 @@ const mainDisclosures = [
     link: "https://techcrunch.com/2025/12/12/home-depot-exposed-access-to-internal-systems-for-a-year-says-researcher/",
     linkText: "Featured in TechCrunch",
   },
+];
+
+const additionalDisclosures = [
   {
     company: "GitHub",
     title: "Critical Infrastructure Access",
@@ -49,9 +61,6 @@ const mainDisclosures = [
     icon: Github,
     date: "Nov 2025",
   },
-];
-
-const additionalDisclosures = [
   {
     company: "TripAdvisor",
     title: "Sensitive Data Exposure",

@@ -6,6 +6,7 @@ Ben is a California-based security researcher with a focus on secret scanning, i
 
 ## Security Research
 
+- Algolia Netlify Token Exposure: Awarded $700. Discovered a leaked Netlify token granting access to Algolia's Enterprise account, 44 sites, and DNS records for yarnpkg.com.
 - [Algolia DocSearch Admin Keys](/blog/algolia-docsearch-admin-keys): Resolved. Scraped 15,000 documentation sites and found 39 Algolia admin API keys with full write access to search indexes for projects like Home Assistant and KEDA.
 - [Red Hat SSH Key Exposure](https://access.redhat.com/articles/66234): Hall of Fame. Discovered a leaked SSH private key granting write access to eclipse-che/che, the upstream repository for Red Hat OpenShift Dev Spaces.
 - [Home Depot Exposure](https://techcrunch.com/2025/12/12/home-depot-exposed-access-to-internal-systems-for-a-year-says-researcher/): Featured in TechCrunch. A leaked GitHub token granted access to hundreds of private repositories and cloud infrastructure.
