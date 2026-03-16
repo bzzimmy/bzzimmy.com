@@ -3,10 +3,10 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const projects = [
   {
-    title: "EasyApex",
-    description: "Automated Chrome extension for solving Apex Learning quizzes using Vision AI. Handles text, images, and drag-and-drop questions with human-like delays.",
-    tech: ["TypeScript", "React", "Vision AI"],
-    link: "https://github.com/bzzimmy/easyapex",
+    title: "awesome-secret-hunting",
+    description: "A curated list of tools, techniques, and resources for offensive secret scanning and credential discovery.",
+    tech: ["Awesome List", "Secret Detection", "Security"],
+    link: "https://github.com/bzzimmy/awesome-secret-hunting",
     stats: "Open Source",
   },
   // {
