@@ -1,11 +1,12 @@
 # Ben Zimmermann
 
-> Security researcher specializing in identifying critical failures in large-scale systems. Awarded over $25,000 in bug bounties for securing critical infrastructure and the open web.
+> Security researcher specializing in identifying critical failures in large-scale systems. Awarded over $27,000 in bug bounties for securing critical infrastructure and the open web.
 
 Ben is a California-based security researcher with a focus on secret scanning, infrastructure security, and vulnerability disclosure. His work has been featured in TechCrunch and NPR.
 
 ## Security Research
 
+- [Pump Production Environment File Exposure](https://www.linkedin.com/posts/stuart-lundberg_pump-terms-conditions-activity-7441951300302479360-iJO8): Awarded $2,000. Found a publicly exposed production environment file containing live AWS credentials with access to 57 S3 buckets, Auth0 management API tokens, and database credentials.
 - TYPO3 Slack Admin Token Exposure: Awarded $700. Found a leaked Slack token granting admin-level access to the TYPO3 workspace with 9,600+ members, including private channels and full message history.
 - Algolia Netlify Token Exposure: Awarded $700. Discovered a leaked Netlify token granting access to Algolia's Enterprise account, 44 sites, and DNS records for yarnpkg.com.
 - [Algolia DocSearch Admin Keys](/blog/algolia-docsearch-admin-keys): Resolved. Scraped 15,000 documentation sites and found 39 Algolia admin API keys with full write access to search indexes for projects like Home Assistant and KEDA.

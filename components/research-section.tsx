@@ -8,6 +8,17 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const mainDisclosures = [
   {
+    company: "Pump",
+    title: "Production Environment File Exposure",
+    bounty: "$2,000",
+    severity: "Critical",
+    description: "Found a publicly exposed production environment file containing live AWS credentials with access to 57 S3 buckets, Auth0 management API tokens, and database credentials.",
+    icon: FileCode,
+    date: "Mar 2026",
+    link: "https://www.linkedin.com/posts/stuart-lundberg_pump-terms-conditions-activity-7441951300302479360-iJO8",
+    linkText: "Acknowledged by Pump",
+  },
+  {
     company: "TYPO3",
     title: "Slack Admin Token Exposure",
     bounty: "$700",
@@ -36,6 +47,9 @@ const mainDisclosures = [
     link: "/blog/algolia-docsearch-admin-keys",
     linkText: "Read the full write-up",
   },
+];
+
+const additionalDisclosures = [
   {
     company: "Red Hat",
     title: "SSH Key Exposure",
@@ -47,9 +61,6 @@ const mainDisclosures = [
     link: "https://access.redhat.com/articles/66234",
     linkText: "Acknowledged by Red Hat Security",
   },
-];
-
-const additionalDisclosures = [
   {
     company: "TechCrunch",
     title: "Home Depot Exposure",

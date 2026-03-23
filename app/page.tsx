@@ -29,7 +29,7 @@ export default function Home() {
 
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground mt-2">
             Hey, I&apos;m Ben. I&apos;m a 17-year-old security researcher from California.
-            I&apos;ve been awarded over <span className="text-foreground font-medium">$25,000 in bug bounties</span> for securing critical infrastructure and the open web.
+            I&apos;ve been awarded over <span className="text-foreground font-medium">$27,000 in bug bounties</span> for securing critical infrastructure and the open web.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
