@@ -8,6 +8,15 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const mainDisclosures = [
   {
+    company: "TYPO3",
+    title: "Slack Admin Token Exposure",
+    bounty: "$700",
+    severity: "Critical",
+    description: "Found a leaked Slack token granting admin-level access to the TYPO3 workspace with 9,600+ members, including private channels and full message history.",
+    icon: FileCode,
+    date: "Mar 2026",
+  },
+  {
     company: "Algolia",
     title: "Leaked Netlify Token Exposure",
     bounty: "$700",
@@ -38,6 +47,9 @@ const mainDisclosures = [
     link: "https://access.redhat.com/articles/66234",
     linkText: "Acknowledged by Red Hat Security",
   },
+];
+
+const additionalDisclosures = [
   {
     company: "TechCrunch",
     title: "Home Depot Exposure",
@@ -49,9 +61,6 @@ const mainDisclosures = [
     link: "https://techcrunch.com/2025/12/12/home-depot-exposed-access-to-internal-systems-for-a-year-says-researcher/",
     linkText: "Featured in TechCrunch",
   },
-];
-
-const additionalDisclosures = [
   {
     company: "GitHub",
     title: "Critical Infrastructure Access",
