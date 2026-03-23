@@ -3,7 +3,7 @@ title: "A YC-Backed Startup Left Production AWS Keys Public for 5 Months. Their 
 date: "2026-03-23"
 summary: "Pump.co's full production environment file was publicly exposed for 5 months. They silently fixed it and never responded to the disclosure."
 tags: ["security-research", "disclosure", "aws", "credential-exposure", "vdp"]
-draft: true
+draft: false
 cover: /images/blog/pump-vdp-cover.png
 ---
 
