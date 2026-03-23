@@ -13,7 +13,7 @@ Ben is a California-based security researcher with a focus on secret scanning, i
 - [Home Depot Exposure](https://techcrunch.com/2025/12/12/home-depot-exposed-access-to-internal-systems-for-a-year-says-researcher/): Featured in TechCrunch. A leaked GitHub token granted access to hundreds of private repositories and cloud infrastructure.
 - [GitHub Critical Infrastructure](https://github.com/bzzimmy): Awarded $20,000. Discovered a leaked OAuth token granting write access to core repositories.
 - [Vue.js Security Hall of Fame](https://github.com/vuejs/core/blob/main/SECURITY.md): Found a leaked Algolia Admin API key with write access to search index.
-- [TripAdvisor Data Exposure](https://bzzimmy.com): Awarded $1,500. Identified exposed employee token allowing access to source code and pipelines.
+- [TripAdvisor Data Exposure](https://benzimmermann.dev): Awarded $1,500. Identified exposed employee token allowing access to source code and pipelines.
 
 ## Projects
 
