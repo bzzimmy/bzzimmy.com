@@ -21,7 +21,6 @@ Ben is a California-based security researcher with a focus on secret scanning, i
 
 ## Blog
 
-- [When Pump.fun's VDP Means "Vulnerability? Don't Point-that-out"](https://benzimmermann.dev/blog/pump-vdp-silence)
 - [How I Found 39 Admin API Keys Powering Algolia DocSearch](https://benzimmermann.dev/blog/algolia-docsearch-admin-keys)
 - [How a Leaked GitHub Token Exposed Home Depot's Internal Systems](https://benzimmermann.dev/blog/home-depot-token-exposure)
 
