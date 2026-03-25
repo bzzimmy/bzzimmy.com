@@ -8,6 +8,15 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const mainDisclosures = [
   {
+    company: "OpenAI",
+    title: "3,342 Leaked API Keys",
+    bounty: "$500",
+    severity: "Critical",
+    description: "Discovered 3,342 active OpenAI API keys leaked in public repositories. Reported to OpenAI Security, who confirmed and revoked the keys.",
+    icon: FileCode,
+    date: "Mar 2026",
+  },
+  {
     company: "Pump",
     title: "Production Environment File Exposure",
     bounty: "$2,000",
@@ -36,6 +45,9 @@ const mainDisclosures = [
     icon: FileCode,
     date: "Mar 2026",
   },
+];
+
+const additionalDisclosures = [
   {
     company: "Algolia DocSearch",
     title: "39 Admin Keys Exposed",
@@ -47,9 +59,6 @@ const mainDisclosures = [
     link: "/blog/algolia-docsearch-admin-keys",
     linkText: "Read the full write-up",
   },
-];
-
-const additionalDisclosures = [
   {
     company: "Red Hat",
     title: "SSH Key Exposure",

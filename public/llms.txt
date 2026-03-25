@@ -6,6 +6,7 @@ Ben is a California-based security researcher with a focus on secret scanning, i
 
 ## Security Research
 
+- OpenAI — 3,342 Leaked API Keys: Awarded $500. Discovered 3,342 active OpenAI API keys leaked in public repositories. Reported to OpenAI Security, who confirmed and revoked the keys.
 - [Pump Production Environment File Exposure](https://www.linkedin.com/posts/stuart-lundberg_pump-terms-conditions-activity-7441951300302479360-iJO8): Awarded $2,000. Found a publicly exposed production environment file containing live AWS credentials with access to 57 S3 buckets, Auth0 management API tokens, and database credentials.
 - TYPO3 Slack Admin Token Exposure: Awarded $700. Found a leaked Slack token granting admin-level access to the TYPO3 workspace with 9,600+ members, including private channels and full message history.
 - Algolia Netlify Token Exposure: Awarded $700. Discovered a leaked Netlify token granting access to Algolia's Enterprise account, 44 sites, and DNS records for yarnpkg.com.
