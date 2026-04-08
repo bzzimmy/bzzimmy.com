@@ -28,6 +28,28 @@ export interface PostMeta extends PostFrontmatter {
   slug: string;
 }
 
+function toPostMeta(post: Post): PostMeta {
+  return {
+    slug: post.slug,
+    title: post.title,
+    date: post.date,
+    summary: post.summary,
+    tags: post.tags,
+    draft: post.draft,
+    cover: post.cover,
+    readingTime: post.readingTime,
+    canonicalUrl: post.canonicalUrl,
+  };
+}
+
+function isVisiblePost(frontmatter: PostFrontmatter): boolean {
+  if (process.env.NODE_ENV === "production") {
+    return !frontmatter.draft;
+  }
+
+  return true;
+}
+
 function calculateReadingTime(content: string): string {
   const wordsPerMinute = 200;
   const words = content.trim().split(/\s+/).length;
@@ -35,41 +57,48 @@ function calculateReadingTime(content: string): string {
   return `${minutes} min read`;
 }
 
-export function getAllPosts(): PostMeta[] {
+function parsePostFile(fullPath: string): Post {
+  const slug = path.basename(fullPath).replace(/\.(md|mdx)$/, "");
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+  const frontmatter = PostFrontmatterSchema.parse(data);
+  const readingTime = frontmatter.readingTime || calculateReadingTime(content);
+
+  return {
+    slug,
+    content,
+    ...frontmatter,
+    readingTime,
+  };
+}
+
+function getAllPostPaths(): string[] {
   if (!fs.existsSync(postsDirectory)) {
     return [];
   }
 
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPosts = fileNames
+  return fs
+    .readdirSync(postsDirectory)
     .filter((fileName) => fileName.endsWith(".md") || fileName.endsWith(".mdx"))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.(md|mdx)$/, "");
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, "utf8");
-      const { data, content } = matter(fileContents);
+    .map((fileName) => path.join(postsDirectory, fileName));
+}
 
-      // Validate and parse frontmatter
-      const frontmatter = PostFrontmatterSchema.parse(data);
+function sortPostsByDate<T extends { date: string }>(posts: T[]): T[] {
+  return posts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
 
-      // Calculate reading time if not provided
-      const readingTime = frontmatter.readingTime || calculateReadingTime(content);
+export function getAllPostsWithContent(): Post[] {
+  return sortPostsByDate(
+    getAllPostPaths()
+      .map(parsePostFile)
+      .filter((post) => isVisiblePost(post))
+  );
+}
 
-      return {
-        slug,
-        ...frontmatter,
-        readingTime,
-      };
-    })
-    // Filter out drafts in production
-    .filter((post) => {
-      if (process.env.NODE_ENV === "production") {
-        return !post.draft;
-      }
-      return true;
-    })
-    // Sort by date descending
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export function getAllPosts(): PostMeta[] {
+  const allPosts = getAllPostsWithContent().map(toPostMeta);
 
   return allPosts;
 }
@@ -87,25 +116,13 @@ export function getPostBySlug(slug: string): Post | null {
     return null;
   }
 
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const post = parsePostFile(fullPath);
 
-  // Validate and parse frontmatter
-  const frontmatter = PostFrontmatterSchema.parse(data);
-
-  // Filter drafts in production
-  if (process.env.NODE_ENV === "production" && frontmatter.draft) {
+  if (!isVisiblePost(post)) {
     return null;
   }
 
-  const readingTime = frontmatter.readingTime || calculateReadingTime(content);
-
-  return {
-    slug,
-    content,
-    ...frontmatter,
-    readingTime,
-  };
+  return post;
 }
 
 export function getAllSlugs(): string[] {

@@ -2,153 +2,64 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Github, Plane, FileCode, Puzzle, ChevronDown, Home } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import {
+  additionalDisclosures,
+  featuredDisclosures,
+  type ResearchDisclosure,
+} from "@/lib/research";
 
+function DisclosureReference({
+  link,
+  linkText,
+}: Pick<ResearchDisclosure, "link" | "linkText">) {
+  if (!link || !linkText) {
+    return null;
+  }
 
-const mainDisclosures = [
-  {
-    company: "OpenAI",
-    title: "3,342 Leaked API Keys",
-    bounty: "$500",
-    severity: "Critical",
-    description: "Discovered 3,342 active OpenAI API keys leaked in public repositories. Reported to OpenAI Security, who confirmed and revoked the keys.",
-    icon: FileCode,
-    date: "Mar 2026",
-  },
-  {
-    company: "Pump",
-    title: "Production Environment File Exposure",
-    bounty: "$2,000",
-    severity: "Critical",
-    description: "Found a publicly exposed production environment file containing live AWS credentials with access to 57 S3 buckets, Auth0 management API tokens, and database credentials.",
-    icon: FileCode,
-    date: "Mar 2026",
-    link: "https://www.linkedin.com/posts/stuart-lundberg_pump-terms-conditions-activity-7441951300302479360-iJO8",
-    linkText: "Acknowledged by Pump",
-  },
-  {
-    company: "TYPO3",
-    title: "Slack Admin Token Exposure",
-    bounty: "$700",
-    severity: "Critical",
-    description: "Found a leaked Slack token granting admin-level access to the TYPO3 workspace with 9,600+ members, including private channels and full message history.",
-    icon: FileCode,
-    date: "Mar 2026",
-  },
-  {
-    company: "Algolia",
-    title: "Leaked Netlify Token Exposure",
-    bounty: "$700",
-    severity: "High",
-    description: "Discovered a leaked Netlify token granting access to Algolia's Enterprise account, 44 sites, and DNS records for yarnpkg.com.",
-    icon: FileCode,
-    date: "Mar 2026",
-  },
-];
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
+    >
+      {linkText}
+    </a>
+  );
+}
 
-const additionalDisclosures = [
-  {
-    company: "Algolia DocSearch",
-    title: "39 Admin Keys Exposed",
-    bounty: "Resolved",
-    severity: "Critical",
-    description: "Scraped 15,000 documentation sites and found 39 Algolia admin API keys with full write access to search indexes for projects like Home Assistant and KEDA.",
-    icon: FileCode,
-    date: "Mar 2026",
-    link: "/blog/algolia-docsearch-admin-keys",
-    linkText: "Read the full write-up",
-  },
-  {
-    company: "Red Hat",
-    title: "SSH Key Exposure",
-    bounty: "Hall of Fame",
-    severity: "Critical",
-    description: "Discovered a leaked SSH private key granting write access to eclipse-che/che, the upstream repository for Red Hat OpenShift Dev Spaces.",
-    icon: FileCode,
-    date: "Feb 2026",
-    link: "https://access.redhat.com/articles/66234",
-    linkText: "Acknowledged by Red Hat Security",
-  },
-  {
-    company: "TechCrunch",
-    title: "Home Depot Exposure",
-    bounty: "Featured",
-    severity: "Critical",
-    description: "A leaked GitHub token granted access to hundreds of private repositories, cloud infrastructure, and order fulfillment systems.",
-    icon: Home,
-    date: "Dec 2025",
-    link: "https://techcrunch.com/2025/12/12/home-depot-exposed-access-to-internal-systems-for-a-year-says-researcher/",
-    linkText: "Featured in TechCrunch",
-  },
-  {
-    company: "GitHub",
-    title: "Critical Infrastructure Access",
-    bounty: "$20,000",
-    severity: "Critical",
-    description: "Discovered a leaked OAuth token granting write access to 'github/github' and 74,000+ private repositories.",
-    icon: Github,
-    date: "Nov 2025",
-  },
-  {
-    company: "TripAdvisor",
-    title: "Sensitive Data Exposure",
-    bounty: "$1,500",
-    severity: "High",
-    description: "Identified a publicly exposed employee token with 'repo' and 'workflow' scopes, allowing access to source code and build pipelines.",
-    icon: Plane,
-    date: "Nov 2025",
-  },
-  {
-    company: "Vue.js",
-    title: "Admin API Key Exposure",
-    bounty: "Hall of Fame",
-    severity: "Critical",
-    description: "Found a leaked Algolia Admin API key with write access to the official documentation search index.",
-    icon: FileCode,
-    date: "Oct 2025",
-    link: "https://github.com/vuejs/core/blob/main/SECURITY.md",
-    linkText: "Acknowledged in the Vue.js Security Hall of Fame",
-  },
-  {
-    company: "Chrome Extensions",
-    title: "AI Auth Bypass",
-    bounty: "Resolved",
-    severity: "High",
-    description: "Reverse-engineered popular AI extensions to bypass client-side authentication, enabling free access to premium LLM APIs.",
-    icon: Puzzle,
-    date: "Sep 2025",
-  },
-  {
-    company: "Margelo",
-    title: "Exposed Credentials",
-    bounty: "Resolved",
-    severity: "Medium",
-    description: "Discovered publicly exposed credentials that could compromise development infrastructure.",
-    icon: FileCode,
-    date: "Aug 2025",
-  },
-  {
-    company: "Popsa",
-    title: "Security Misconfiguration",
-    bounty: "Resolved",
-    severity: "Medium",
-    description: "Identified misconfigurations that could lead to unauthorized access to user data.",
-    icon: FileCode,
-    date: "Jul 2025",
-  },
-  {
-    company: "NPR",
-    title: "Early Security Research",
-    bounty: "Featured",
-    severity: "Low",
-    description: "Discovered a Google Family Link security bypass at age 9, marking the beginning of my security research journey.",
-    icon: FileCode,
-    date: "Apr 2018",
-    link: "https://www.npr.org/2018/06/18/620005246/a-guide-to-parental-controls-for-kids-tech-use",
-    linkText: "Featured in NPR",
-  },
-];
+function DisclosureItem({ item }: { item: ResearchDisclosure }) {
+  return (
+    <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
+      <div className="shrink-0 w-24 pt-1">
+        <span className="font-mono text-sm text-zinc-500">{item.date}</span>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center justify-between gap-4">
+          <h3 className="text-lg font-semibold text-foreground">
+            {item.company}
+            <span className="text-muted-foreground font-normal ml-2">— {item.title}</span>
+          </h3>
+
+          <div className="shrink-0">
+            <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
+              {item.bounty}
+            </span>
+          </div>
+        </div>
+
+        <p className="text-base leading-relaxed text-muted-foreground/80">
+          <DisclosureReference link={item.link} linkText={item.linkText} />
+          {item.link && item.linkText ? ". " : null}
+          {item.description}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export function ResearchSection() {
   const [showMore, setShowMore] = useState(false);
@@ -166,51 +77,9 @@ export function ResearchSection() {
       </div>
 
       <div className="flex flex-col gap-12">
-        {mainDisclosures.map((item, index) => (
+        {featuredDisclosures.map((item, index) => (
           <ScrollReveal key={index} delay={index * 0.1}>
-            <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
-              {/* Date Column */}
-              <div className="shrink-0 w-24 pt-1">
-                <span className="font-mono text-sm text-zinc-500">
-                  {item.date}
-                </span>
-              </div>
-
-              {/* Content Column */}
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {item.company}
-                    <span className="text-muted-foreground font-normal ml-2">
-                       — {item.title}
-                    </span>
-                  </h3>
-
-                  <div className="shrink-0">
-                    <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
-                      {item.bounty}
-                    </span>
-                  </div>
-                </div>
-
-                <p className="text-base leading-relaxed text-muted-foreground/80">
-                  {item.link && item.linkText && (
-                    <>
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
-                      >
-                        {item.linkText}
-                      </a>
-                      {". "}
-                    </>
-                  )}
-                  {item.description}
-                </p>
-              </div>
-            </div>
+            <DisclosureItem item={item} />
           </ScrollReveal>
         ))}
       </div>
@@ -227,49 +96,9 @@ export function ResearchSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.08 }}
-                  className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8"
+                  className="w-full"
                 >
-                  {/* Date Column */}
-                  <div className="shrink-0 w-24 pt-1">
-                    <span className="font-mono text-sm text-zinc-500">
-                      {item.date}
-                    </span>
-                  </div>
-
-                  {/* Content Column */}
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center justify-between gap-4">
-                      <h3 className="text-lg font-semibold text-foreground">
-                        {item.company}
-                        <span className="text-muted-foreground font-normal ml-2">
-                           — {item.title}
-                        </span>
-                      </h3>
-
-                      <div className="shrink-0">
-                        <span className="font-mono text-sm font-bold text-green-400/90 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">
-                          {item.bounty}
-                        </span>
-                      </div>
-                    </div>
-
-                    <p className="text-base leading-relaxed text-muted-foreground/80">
-                      {item.link && item.linkText && (
-                        <>
-                          <a
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors"
-                          >
-                            {item.linkText}
-                          </a>
-                          {". "}
-                        </>
-                      )}
-                      {item.description}
-                    </p>
-                  </div>
+                  <DisclosureItem item={item} />
                 </motion.div>
               ))}
             </div>
