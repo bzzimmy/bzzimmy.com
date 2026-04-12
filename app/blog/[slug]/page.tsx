@@ -8,6 +8,7 @@ import { createHighlighter } from "shiki";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { Footer } from "@/components/footer";
+import { CopyButton } from "@/components/ui/copy-button";
 
 const highlighter = await createHighlighter({
   themes: ["github-dark-default"],
@@ -96,6 +97,8 @@ export default async function BlogPostPage({ params }: Props) {
                 {post.readingTime}
               </span>
             )}
+
+            <CopyButton content={post.content} />
           </div>
 
           {post.tags.length > 0 && (
