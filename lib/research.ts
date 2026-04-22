@@ -11,6 +11,17 @@ export interface ResearchDisclosure {
 
 export const featuredDisclosures: ResearchDisclosure[] = [
   {
+    company: "Truffle Security",
+    title: "CDE Secret Exposure Research",
+    bounty: "Featured",
+    severity: "Critical",
+    description:
+      "Scanned 22 million public projects across CodeSandbox, StackBlitz, CodePen, and JSFiddle, uncovering 8,792 verified live secrets.",
+    date: "Apr 2026",
+    link: "https://trufflesecurity.com/blog/thousands-live-secrets-found-across-four-cloud-dev-environments",
+    linkText: "Published on Truffle Security",
+  },
+  {
     company: "OpenAI",
     title: "3,342 Leaked API Keys",
     bounty: "$500",
@@ -39,6 +50,9 @@ export const featuredDisclosures: ResearchDisclosure[] = [
       "Found a leaked Slack token granting admin-level access to the TYPO3 workspace with 9,600+ members, including private channels and full message history.",
     date: "Mar 2026",
   },
+];
+
+export const additionalDisclosures: ResearchDisclosure[] = [
   {
     company: "Algolia",
     title: "Leaked Netlify Token Exposure",
@@ -48,9 +62,6 @@ export const featuredDisclosures: ResearchDisclosure[] = [
       "Discovered a leaked Netlify token granting access to Algolia's Enterprise account, 44 sites, and DNS records for yarnpkg.com.",
     date: "Mar 2026",
   },
-];
-
-export const additionalDisclosures: ResearchDisclosure[] = [
   {
     company: "Algolia DocSearch",
     title: "39 Admin Keys Exposed",
