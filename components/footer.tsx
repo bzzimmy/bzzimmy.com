@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="w-full max-w-2xl px-6 py-12 mx-auto">
       <div className="flex flex-col items-center justify-between gap-6 sm:flex-row border-t border-zinc-800 pt-12">
         <div className="flex flex-col items-center gap-2 sm:items-start">
-          <span className="text-sm font-medium text-foreground">
+          <span className="text-sm font-medium text-muted-foreground">
             © 2026 Ben Zimmermann
           </span>
         </div>
